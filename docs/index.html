@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9fc">
+  <meta name="description" content="P2A-VLA progressively aligns perception and action representations for robotic manipulation. Explore the method, LIBERO, CALVIN and MetaWorld results, and real-world robot demonstrations.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="P2A-VLA · Progressive Perception-to-Action Alignment">
+  <meta property="og:description" content="Perception-guided representation refinement with Progressive Representation Alignment and Local Structural Consistency.">
+  <meta property="og:image" content="https://55dupup.github.io/P2A-VLA-offical/assets/images/social-card.jpg">
+  <meta property="og:url" content="https://55dupup.github.io/P2A-VLA-offical/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/p2a-logo.png" type="image/png">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" href="assets/images/architecture.webp" as="image">
+  <title>P2A-VLA | Progressive Perception-to-Action Alignment</title>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="wordmark" href="#" aria-label="P2A-VLA home"><span class="brand-logo"><img src="assets/images/p2a-logo.png" alt="" width="40" height="40"></span> P2A-VLA</a>
+    <nav aria-label="Main navigation"><a href="#method">Method</a><a href="#demos">Demos</a><a href="#results">Results</a></nav>
+    <a class="nav-code" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero container" id="overview" aria-labelledby="project-title">
+    <h1 id="project-title"><span class="project-name">P2A-VLA</span><span class="project-subtitle">Progressive Perception-to-Action Alignment<br class="desktop-break"> for Vision-Language-Action Models</span></h1>
+    <div class="resource-links">
+      <a class="button primary" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+      <a class="button text-button" href="#demos"><span aria-hidden="true">▷</span> Watch demos</a>
+    </div>
+    <figure class="architecture-figure hero-architecture"><button class="figure-zoom" type="button" data-zoom="assets/images/architecture.webp" data-caption="P2A-VLA architecture" aria-label="Enlarge P2A-VLA architecture"><img src="assets/images/architecture.webp" alt="P2A-VLA architecture: hierarchical VLM features feed stacked Perception-Guided Refinement blocks. Progressive Representation Alignment applies visual grounding and task-guided refinement, while Local Structural Consistency encourages contextually related samples to have closer action embeddings." width="1518" height="627" fetchpriority="high"><span class="zoom-hint">View full figure ↗</span></button><figcaption><strong>Overview of P2A-VLA.</strong> Perceptual-query representations from the final VLM layer initialize the action representation. Stacked <strong>PGR blocks</strong> refine it using hierarchical visual and textual features. <strong>(a) PRA</strong> promotes visual grounding and task-guided inter-layer updates. <strong>(b) LSC</strong> uses contextual relationships from joint visual-language representations to guide local organization across samples.</figcaption></figure>
+    <div class="metrics" aria-label="Evaluation highlights">
+      <div><span class="metric-label">LIBERO</span><strong>98.5<span>%</span></strong><small>Average success rate</small></div>
+      <div><span class="metric-label">CALVIN ABC → D</span><strong>4.47<span>/5</span></strong><small>Average sequence length</small></div>
+      <div><span class="metric-label">METAWORLD MT50</span><strong>89.8<span>%</span></strong><small>Average success rate</small></div>
+      <div><span class="metric-label">COMPACT BACKBONE</span><strong>0.5<span>B</span></strong><small>No robot-data pretraining</small></div>
+    </div>
+  </section>
+
+
+  <section class="section method-section" id="method" aria-labelledby="method-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="method-title">Motivation and Method</h2>
+        <p class="method-intro">Pretrained vision-language models provide visual context and instruction semantics for robot control, but a <strong>representation gap</strong> remains between these high-level features and continuous actions. Direct bridging mainly supervises final action predictions, while intermediate bridging adds targets such as plans, future observations, trajectories, or affordances. Both offer limited explicit guidance on how VLM priors should shape <strong>intermediate action representations</strong> throughout the policy.</p>
+        <p class="method-intro"><strong>P2A-VLA</strong> formulates action generation as a <strong>perception-guided representation refinement process</strong>. Stacked Perception-Guided Refinement (PGR) blocks incorporate hierarchical visual and textual VLM features into successive action representation updates. Two complementary training objectives guide this process: <strong class="key-term">Progressive Representation Alignment (PRA)</strong> supports perceptually grounded, task-consistent refinement across layers; <strong class="key-term">Local Structural Consistency (LSC)</strong> uses contextual affinities across samples to guide the local organization of action representations.</p>
+      </div>
+
+      <div class="method-details-grid">
+        <figure class="paper-figure comparison-figure">
+          <button class="figure-zoom" type="button" data-zoom="assets/images/bridging.webp" data-caption="Comparison of perception-to-action bridging paradigms" aria-label="Enlarge the comparison of perception-to-action bridging paradigms"><img src="assets/images/bridging.webp" alt="Direct bridging with output-level supervision; intermediate bridging with auxiliary targets; and P2A-VLA with progressive representation alignment and structural consistency across layers." width="960" height="820" loading="lazy"><span class="zoom-hint">Enlarge figure ↗</span></button>
+          <figcaption><strong>Perception-to-Action Bridging Paradigms.</strong> <strong>(a) Direct bridging</strong> maps VLM representations to actions under final action supervision. <strong>(b) Intermediate bridging</strong> adds auxiliary targets for localized action-relevant supervision. <strong>(c) P2A-VLA</strong> progressively refines action representations using hierarchical VLM features, with explicit layer-wise alignment and cross-sample structural guidance.</figcaption>
+        </figure>
+        <div class="method-components">
+          <figure class="paper-figure module-figure">
+          <button class="figure-zoom" type="button" data-zoom="assets/images/pgr-block.webp" data-caption="Perception-Guided Refinement block" aria-label="Enlarge the Perception-Guided Refinement block"><img src="assets/images/pgr-block.webp" alt="PGR block with visual cross-attention, text cross-attention, and action self-attention, followed by gated fusion, normalization, an MLP, and a residual connection." width="720" height="360" loading="lazy"><span class="zoom-hint">Enlarge figure ↗</span></button>
+          <figcaption><strong>Perception-Guided Refinement (PGR) Block.</strong> Visual and textual cross-attention incorporate layer-specific visual context and task semantics; action self-attention captures dependencies among action tokens. Gated fusion, residual connections, and feed-forward transformations produce the refined action representation.</figcaption>
+        </figure>
+          <div class="alignment-summary">
+            <div><h3>Progressive Representation Alignment (PRA)</h3><p><strong>Per-Layer Visual Grounding</strong> aligns each intermediate action representation with the corresponding visual features in a shared embedding space. <strong>Task-Guided Inter-Layer Refinement</strong> aligns representation updates between successive policy layers with task semantics. Together, these objectives encourage perceptually grounded and task-consistent refinement.</p></div>
+            <div><h3>Local Structural Consistency (LSC)</h3><p>Joint visual-language features provide a task-aware basis for estimating <strong>contextual affinities across samples</strong>. LSC constructs local perceptual neighborhoods from these affinities and applies <strong>affinity-weighted regularization</strong>, encouraging contextually related samples to have closer action embeddings. This complements PRA by guiding local organization across samples.</p></div>
+          </div>
+        </div>
+      </div>
+      <p class="method-footnote">The alignment objectives and auxiliary projection heads are used only during training, adding <strong>no inference-time computation</strong>. </p>
+      <details class="technical-details implementation-details"><summary>Implementation Details <span aria-hidden="true">+</span></summary><div class="implementation-content"><p>The reported model uses a Qwen2.5-0.5B backbone, 24 PGR blocks, rank-64 LoRA adaptation, and action chunks of length eight. Training combines an ℓ₁ action loss with PRA and LSC.</p></div></details>
+    </div>
+  </section>
+
+  <section class="section container simulation-section" id="demos" aria-labelledby="demos-title">
+    <div class="section-heading"><h2 id="demos-title">Simulation</h2><p class="section-intro">Our evaluation covers <strong>multi-task generalization</strong>, <strong>long-horizon skill composition</strong>, and <strong>diverse tabletop manipulation</strong> across three complementary benchmarks. Selected evaluation rollouts are shown below; each video can be expanded for a closer view.</p></div>
+    <div id="simulation-gallery" class="benchmark-galleries">
+      <section class="benchmark-gallery" data-benchmark="libero" style="--columns: 4" aria-labelledby="gallery-libero-title">
+        <div class="benchmark-heading"><div><h3 id="gallery-libero-title">LIBERO</h3><p>Spatial · Object · Goal · Long</p></div><div class="carousel-controls" hidden><span class="carousel-counter" aria-live="polite" aria-atomic="true"></span><button class="carousel-prev" type="button" aria-label="Previous LIBERO videos" aria-controls="row-libero" disabled>←</button><button class="carousel-next" type="button" aria-label="Next LIBERO videos" aria-controls="row-libero">→</button></div></div>
+        <div id="row-libero" class="demo-row" tabindex="0" role="region" aria-label="LIBERO evaluation videos"></div>
+      </section>
+      <section class="benchmark-gallery" data-benchmark="calvin" style="--columns: 5" aria-labelledby="gallery-calvin-title">
+        <div class="benchmark-heading"><div><h3 id="gallery-calvin-title">CALVIN</h3><p>Five subtasks from one successful sequence</p></div><div class="carousel-controls" hidden><span class="carousel-counter" aria-live="polite" aria-atomic="true"></span><button class="carousel-prev" type="button" aria-label="Previous CALVIN videos" aria-controls="row-calvin" disabled>←</button><button class="carousel-next" type="button" aria-label="Next CALVIN videos" aria-controls="row-calvin">→</button></div></div>
+        <div id="row-calvin" class="demo-row" tabindex="0" role="region" aria-label="CALVIN evaluation videos"></div>
+      </section>
+      <section class="benchmark-gallery" data-benchmark="metaworld" style="--columns: 4" aria-labelledby="gallery-metaworld-title">
+        <div class="benchmark-heading"><div><h3 id="gallery-metaworld-title">MetaWorld</h3><p>Easy · Medium · Hard · Very Hard</p></div><div class="carousel-controls" hidden><span class="carousel-counter" aria-live="polite" aria-atomic="true"></span><button class="carousel-prev" type="button" aria-label="Previous MetaWorld videos" aria-controls="row-metaworld" disabled>←</button><button class="carousel-next" type="button" aria-label="Next MetaWorld videos" aria-controls="row-metaworld">→</button></div></div>
+        <div id="row-metaworld" class="demo-row" tabindex="0" role="region" aria-label="MetaWorld evaluation videos"></div>
+      </section>
+    </div>
+    <noscript><p><a href="assets/videos/libero-long.mp4">Watch LIBERO</a> · <a href="assets/videos/calvin-chain.mp4">Watch CALVIN</a> · <a href="assets/videos/metaworld-stick.mp4">Watch MetaWorld</a>.</p></noscript>
+    <p class="media-note">Simulation videos retain source playback speed. CALVIN clips follow their original subtask order.</p>
+  </section>
+
+  <section class="section real-section" id="real-world" aria-labelledby="real-title">
+    <div class="container">
+      <div class="section-heading"><h2 id="real-title">Real-World Manipulation</h2><p class="section-intro">Real-world evaluation covers three manipulation tasks under <strong>in-distribution (ID)</strong> and <strong>out-of-distribution (OOD)</strong> settings. OOD conditions vary backgrounds, object configurations, illumination, and dynamic distractors. Selected recordings are shown below.</p></div>
+      <div class="real-grid">
+        <article class="demo-card real-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="assets/images/real-pick-place.jpg" aria-label="Pick and place a block"><source data-src="assets/videos/real-pick-place.mp4" type="video/mp4"></video><span class="video-speed">1.5× source</span></div><div class="demo-info"><span class="demo-category">TASK 01</span><h3>Block into Box</h3></div></article>
+        <article class="demo-card real-card"><div class="video-frame"><video id="cylinder-video" controls muted loop playsinline preload="none" poster="assets/images/real-cylinder-1.jpg" aria-label="Place a green cylinder into a bowl"><source data-src="assets/videos/real-cylinder-1.mp4" type="video/mp4"></video><span class="video-speed">1.5× source</span></div><div class="demo-info"><span class="demo-category">TASK 02</span><h3>Cylinder into Bowl</h3></div></article>
+        <article class="demo-card real-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="assets/images/real-stacking.jpg" aria-label="Block stacking attempt"><source data-src="assets/videos/real-stacking.mp4?v=2" type="video/mp4"></video><span class="video-speed">3× source</span></div><div class="demo-info"><span class="demo-category">TASK 03</span><h3>Block-Stacking Attempt</h3></div></article>
+      </div>
+      <details class="technical-details recording-details"><summary>Video Playback Details <span aria-hidden="true">+</span></summary><div class="recording-content"><p>Tasks 1–2 play at 1.5× speed. Task 3 removes a prolonged static hold between placement and arm retraction, then plays at 3× speed; the chronological action sequence is preserved. Links below provide the original recordings. Quantitative results are reported separately.</p><div class="recording-links"><a href="videos/success-task1_p2a_c25_abs_eef-20260728_192748.mp4" target="_blank" rel="noopener">Task 1 · Recorded speed ↗</a><a href="videos/success-task2_p2a_c25_abs_eef-20260728_211626.mp4" target="_blank" rel="noopener">Task 2 · Recorded speed ↗</a><a href="videos/success-task3_p2a_c25_abs_eef-20260728_212806.mp4" target="_blank" rel="noopener">Task 3 · Original recording ↗</a></div></div></details>
+    </div>
+  </section>
+
+
+  <section class="section container" id="results" aria-labelledby="results-title">
+    <div class="section-heading"><h2 id="results-title">Quantitative Results</h2></div>
+    <div class="tabs" role="tablist" aria-label="Benchmark results">
+      <button id="tab-libero" role="tab" aria-selected="true" aria-controls="panel-libero" data-result="libero">LIBERO</button>
+      <button id="tab-calvin" role="tab" aria-selected="false" aria-controls="panel-calvin" tabindex="-1" data-result="calvin">CALVIN</button>
+      <button id="tab-metaworld" role="tab" aria-selected="false" aria-controls="panel-metaworld" tabindex="-1" data-result="metaworld">MetaWorld</button>
+      <button id="tab-real" role="tab" aria-selected="false" aria-controls="panel-real" tabindex="-1" data-result="real">Real World</button>
+    </div>
+    <div id="results-panels"></div>
+    <noscript><p>Benchmark summary: LIBERO 98.5% average success; CALVIN 4.47 average sequence length; MetaWorld MT50 89.8% average success; real-world 88.3% ID and 71.7% OOD average success.</p></noscript>
+    <p class="source-note">Selected baselines are shown; quantitative results summarize benchmark evaluations.</p>
+    <details class="technical-details ablation"><summary>Ablations and Representation Analysis <span aria-hidden="true">+</span></summary><div class="ablation-content"><div><h3>Contributions of PRA and LSC</h3><p>Removing PRA reduces average LIBERO success from <strong>98.5% to 96.1%</strong>; removing LSC reduces it to <strong>97.3%</strong>. An MLP-only architecture achieves 93.8%, while PGR blocks without the two representation objectives achieve 95.6%. These ablations distinguish the architecture from the complementary training objectives.</p><p>The representation analysis examines the representations underlying these results. Per-layer alignment yields stronger perception–action correspondence across policy depth than final-layer-only alignment or no explicit alignment. With LSC, perceptually related samples form more coherent neighborhoods in action space.</p><figure class="analysis-figure"><button class="figure-zoom" type="button" data-zoom="assets/images/representation-analysis.webp" data-caption="Representation analysis" aria-label="Enlarge representation analysis"><img src="assets/images/representation-analysis.webp" alt="Layer-wise perception-action similarity and visualization of action neighborhoods with and without local structural consistency" width="726" height="270" loading="lazy"></button><figcaption><strong>Representation Analysis.</strong> <strong>(a)</strong> Layer-wise perception–action similarity under different alignment strategies. <strong>(b)</strong> t-SNE visualizations of action representations with and without LSC; highlighted points indicate the anchor sample’s perceptual top-K neighbors.</figcaption></figure></div><div class="table-scroll"><table><caption>LIBERO ablation · Average success (%)</caption><thead><tr><th scope="col">Configuration</th><th scope="col">Average</th></tr></thead><tbody><tr><th scope="row">MLP-only</th><td>93.8</td></tr><tr><th scope="row">PGR-only</th><td>95.6</td></tr><tr><th scope="row">Without visual grounding</th><td>96.9</td></tr><tr><th scope="row">Without task-guided refinement</th><td>97.5</td></tr><tr><th scope="row">Without PRA</th><td>96.1</td></tr><tr><th scope="row">Without LSC</th><td>97.3</td></tr><tr class="ours"><th scope="row">P2A-VLA</th><td>98.5</td></tr></tbody></table></div></div></details>
+  </section>
+
+</main>
+<footer class="container site-footer"><a class="wordmark" href="#">P2A-VLA <span class="footer-arrow">↗</span></a><nav class="footer-resources" aria-label="Research resources"><a class="nav-code" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a></nav><p class="credits">Layout inspiration: <a href="https://yangsizhe.github.io/MemoryWAM/" target="_blank" rel="noopener">MemoryWAM</a> & <a href="https://semantic-action-rl.github.io/" target="_blank" rel="noopener">SARL</a>.</p></footer>
+<dialog id="figure-dialog" aria-labelledby="figure-caption"><button class="dialog-close" type="button" aria-label="Close enlarged figure">×</button><img id="figure-image" src="assets/images/architecture.webp" alt=""><p id="figure-caption"></p></dialog>
+<dialog id="video-dialog" aria-labelledby="video-dialog-title"><button class="dialog-close" type="button" aria-label="Close expanded video">×</button><p id="video-dialog-benchmark"></p><h3 id="video-dialog-title"></h3><video id="expanded-video" controls muted loop playsinline preload="none"></video></dialog>
+</body>
+</html>

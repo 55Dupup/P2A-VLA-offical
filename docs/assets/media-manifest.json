@@ -1,0 +1,295 @@
+{
+  "description": "Website derivatives. Speeds are relative to the source recording, not physical control time. No task outcomes are altered.",
+  "figures": {
+    "architecture": [
+      2,
+      [
+        53,
+        51,
+        559,
+        260
+      ]
+    ],
+    "bridging": [
+      0,
+      [
+        319,
+        211,
+        559,
+        416
+      ]
+    ],
+    "pgr-block": [
+      2,
+      [
+        319,
+        319,
+        559,
+        439
+      ]
+    ],
+    "representation-analysis": [
+      6,
+      [
+        53,
+        265,
+        295,
+        355
+      ]
+    ]
+  },
+  "videos": [
+    {
+      "id": "real-pick-place",
+      "group": "real",
+      "title": "Pick and place a block",
+      "sources": [
+        "videos/success-task1_p2a_c25_abs_eef-20260728_192748.mp4"
+      ],
+      "speed": 1.5,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 7.766667,
+      "file": "assets/videos/real-pick-place.mp4",
+      "poster": "assets/images/real-pick-place.jpg"
+    },
+    {
+      "id": "real-cylinder-1",
+      "group": "real",
+      "title": "Place the green cylinder in the bowl",
+      "sources": [
+        "videos/success-task2_p2a_c25_abs_eef-20260728_211626.mp4"
+      ],
+      "speed": 1.5,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 9.066667,
+      "file": "assets/videos/real-cylinder-1.mp4",
+      "poster": "assets/images/real-cylinder-1.jpg"
+    },
+    {
+      "id": "real-stacking",
+      "group": "real",
+      "title": "Block stacking attempt",
+      "sources": [
+        "videos/success-task3_p2a_c25_abs_eef-20260728_212806.mp4"
+      ],
+      "speed": 3,
+      "rotation_degrees": 0,
+      "edits": "Removed the stationary hold from 18.5 to 51 seconds; retained chronological order and final arm retraction; 3x source playback.",
+      "duration_seconds": 8.066667,
+      "file": "assets/videos/real-stacking.mp4",
+      "poster": "assets/images/real-stacking.jpg",
+      "source_segments_seconds": [
+        [
+          0,
+          18.5
+        ],
+        [
+          51,
+          56.7
+        ]
+      ]
+    },
+    {
+      "id": "libero-spatial",
+      "group": "libero",
+      "title": "Pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/libero/libero_spatial/task_04_episode_28_success.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 3.966667,
+      "file": "assets/videos/libero-spatial.mp4",
+      "poster": "assets/images/libero-spatial.jpg"
+    },
+    {
+      "id": "libero-object",
+      "group": "libero",
+      "title": "Pick up the milk and place it in the basket",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/libero/libero_object/task_07_episode_06_success.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 4.133333,
+      "file": "assets/videos/libero-object.mp4",
+      "poster": "assets/images/libero-object.jpg"
+    },
+    {
+      "id": "libero-goal",
+      "group": "libero",
+      "title": "Put the wine bottle on top of the cabinet",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/libero/libero_goal/task_02_episode_21_success.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 2.8,
+      "file": "assets/videos/libero-goal.mp4",
+      "poster": "assets/images/libero-goal.jpg"
+    },
+    {
+      "id": "libero-long",
+      "group": "libero",
+      "title": "Put both moka pots on the stove",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/libero/libero_10/task_08_episode_35_success.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 13.133333,
+      "file": "assets/videos/libero-long.mp4",
+      "poster": "assets/images/libero-long.jpg"
+    },
+    {
+      "id": "calvin-1",
+      "group": "calvin",
+      "title": "Lift the pink block from the slider",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-0-lift_pink_block_slider-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 1.433333,
+      "file": "assets/videos/calvin-1.mp4",
+      "poster": "assets/images/calvin-1.jpg"
+    },
+    {
+      "id": "calvin-2",
+      "group": "calvin",
+      "title": "Place the block in the slider",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-1-place_in_slider-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 0.233333,
+      "file": "assets/videos/calvin-2.mp4",
+      "poster": "assets/images/calvin-2.jpg"
+    },
+    {
+      "id": "calvin-3",
+      "group": "calvin",
+      "title": "Open the drawer",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-2-open_drawer-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 2.033333,
+      "file": "assets/videos/calvin-3.mp4",
+      "poster": "assets/images/calvin-3.jpg"
+    },
+    {
+      "id": "calvin-4",
+      "group": "calvin",
+      "title": "Rotate the red block to the right",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-3-rotate_red_block_right-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 2.366667,
+      "file": "assets/videos/calvin-4.mp4",
+      "poster": "assets/images/calvin-4.jpg"
+    },
+    {
+      "id": "calvin-5",
+      "group": "calvin",
+      "title": "Lift the red block from the table",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-4-lift_red_block_table-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 1.766667,
+      "file": "assets/videos/calvin-5.mp4",
+      "poster": "assets/images/calvin-5.jpg"
+    },
+    {
+      "id": "calvin-chain",
+      "group": "calvin",
+      "title": "Five instructions, one continuous task sequence",
+      "sources": [
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-0-lift_pink_block_slider-static-succ.mp4",
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-1-place_in_slider-static-succ.mp4",
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-2-open_drawer-static-succ.mp4",
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-3-rotate_red_block_right-static-succ.mp4",
+        "experiments/paper_rollout_montages/sources/calvin/sequence_0002/rollout/2-4-lift_red_block_table-static-succ.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 0,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 7.833333,
+      "file": "assets/videos/calvin-chain.mp4",
+      "poster": "assets/images/calvin-chain.jpg"
+    },
+    {
+      "id": "metaworld-door",
+      "group": "metaworld",
+      "title": "Open a door with a revolving joint",
+      "sources": [
+        "experiments/metaworld/clip_compare_75000_20260616-113236/clip_n/EVAL-metaworld-mt50-metaworld-eval-2026_06_16-11_32_39/videos/MT50/door-open-v3/metaworld-eval-2026_06_16-11_32_39--episode=0--success=True--env=door-open-v3.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 180,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 2.6,
+      "file": "assets/videos/metaworld-door.mp4",
+      "poster": "assets/images/metaworld-door.jpg"
+    },
+    {
+      "id": "metaworld-basketball",
+      "group": "metaworld",
+      "title": "Dunk the basketball into the basket",
+      "sources": [
+        "experiments/metaworld/clip_compare_75000_20260616-113236/clip_n/EVAL-metaworld-mt50-metaworld-eval-2026_06_16-11_32_39/videos/MT50/basketball-v3/metaworld-eval-2026_06_16-11_32_39--episode=0--success=True--env=basketball-v3.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 180,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 3.066667,
+      "file": "assets/videos/metaworld-basketball.mp4",
+      "poster": "assets/images/metaworld-basketball.jpg"
+    },
+    {
+      "id": "metaworld-assembly",
+      "group": "metaworld",
+      "title": "Pick up a nut and place it onto a peg",
+      "sources": [
+        "experiments/metaworld/clip_compare_75000_20260616-113236/clip_n/EVAL-metaworld-mt50-metaworld-eval-2026_06_16-11_32_39/videos/MT50/assembly-v3/metaworld-eval-2026_06_16-11_32_39--episode=0--success=True--env=assembly-v3.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 180,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 3.166667,
+      "file": "assets/videos/metaworld-assembly.mp4",
+      "poster": "assets/images/metaworld-assembly.jpg"
+    },
+    {
+      "id": "metaworld-stick",
+      "group": "metaworld",
+      "title": "Grasp a stick and pull a box with the stick",
+      "sources": [
+        "experiments/metaworld/clip_compare_75000_20260616-113236/clip_n/EVAL-metaworld-mt50-metaworld-eval-2026_06_16-11_32_39/videos/MT50/stick-pull-v3/metaworld-eval-2026_06_16-11_32_39--episode=0--success=True--env=stick-pull-v3.mp4"
+      ],
+      "speed": 1,
+      "rotation_degrees": 180,
+      "edits": "Full source duration; chronological concatenation for CALVIN only; no internal cuts.",
+      "duration_seconds": 2.966667,
+      "file": "assets/videos/metaworld-stick.mp4",
+      "poster": "assets/images/metaworld-stick.jpg"
+    }
+  ]
+}
