@@ -2,7 +2,7 @@
 
 **Progressive Perception-to-Action Alignment for Vision-Language-Action Models**
 
-[Project Website](https://55dupup.github.io/P2A-VLA-offical/) · [Code Repository](https://github.com/55Dupup/P2A-VLA)
+[Project Website](https://p2a-vla.github.io/) · [Code Repository](https://github.com/P2A-VLA/P2A-VLA)
 
 This repository contains the project website, figures, and selected simulation and real-world demonstration videos. The research code is maintained separately in the code repository.
 
@@ -13,7 +13,7 @@ This repository contains the project website, figures, and selected simulation a
 - Results and demonstration gallery: `docs/assets/js/site.js`
 - Media: `docs/assets/images/`, `docs/assets/videos/`
 
-The website is published at `https://55dupup.github.io/P2A-VLA-offical/`. Changes pushed to `main` are deployed through GitHub Actions while the repository is public and the repository variable `PUBLISH_PROJECT_WEBSITE` is `true`.
+The website is published at `https://p2a-vla.github.io/`. Changes pushed to `main` are deployed through GitHub Actions while the repository is public and the repository variable `PUBLISH_PROJECT_WEBSITE` is `true`.
 
 To take the website offline, unpublish GitHub Pages before making the repository private, set `PUBLISH_PROJECT_WEBSITE` to `false`, and disable Actions if no private preview builds are needed.
 

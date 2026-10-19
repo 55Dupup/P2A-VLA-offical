@@ -8,8 +8,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="P2A-VLA · Progressive Perception-to-Action Alignment">
   <meta property="og:description" content="Perception-guided representation refinement with Progressive Representation Alignment and Local Structural Consistency.">
-  <meta property="og:image" content="https://55dupup.github.io/P2A-VLA-offical/assets/images/social-card.jpg">
-  <meta property="og:url" content="https://55dupup.github.io/P2A-VLA-offical/">
+  <meta property="og:image" content="https://p2a-vla.github.io/assets/images/social-card.jpg">
+  <meta property="og:url" content="https://p2a-vla.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/p2a-logo.png" type="image/png">
   <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,14 +24,14 @@
   <div class="nav-wrap">
     <a class="wordmark" href="#" aria-label="P2A-VLA home"><span class="brand-logo"><img src="assets/images/p2a-logo.png" alt="" width="40" height="40"></span> P2A-VLA</a>
     <nav aria-label="Main navigation"><a href="#method">Method</a><a href="#demos">Demos</a><a href="#results">Results</a></nav>
-    <a class="nav-code" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+    <a class="nav-code" href="https://github.com/P2A-VLA/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
   </div>
 </header>
 <main id="main">
   <section class="hero container" id="overview" aria-labelledby="project-title">
     <h1 id="project-title"><span class="project-name">P2A-VLA</span><span class="project-subtitle">Progressive Perception-to-Action Alignment<br class="desktop-break"> for Vision-Language-Action Models</span></h1>
     <div class="resource-links">
-      <a class="button primary" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+      <a class="button primary" href="https://github.com/P2A-VLA/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
       <a class="button text-button" href="#demos"><span aria-hidden="true">▷</span> Watch demos</a>
     </div>
     <figure class="architecture-figure hero-architecture"><button class="figure-zoom" type="button" data-zoom="assets/images/architecture.webp" data-caption="P2A-VLA architecture" aria-label="Enlarge P2A-VLA architecture"><img src="assets/images/architecture.webp" alt="P2A-VLA architecture: hierarchical VLM features feed stacked Perception-Guided Refinement blocks. Progressive Representation Alignment applies visual grounding and task-guided refinement, while Local Structural Consistency encourages contextually related samples to have closer action embeddings." width="1518" height="627" fetchpriority="high"><span class="zoom-hint">View full figure ↗</span></button><figcaption><strong>Overview of P2A-VLA.</strong> Perceptual-query representations from the final VLM layer initialize the action representation. Stacked <strong>PGR blocks</strong> refine it using hierarchical visual and textual features. <strong>(a) PRA</strong> promotes visual grounding and task-guided inter-layer updates. <strong>(b) LSC</strong> uses contextual relationships from joint visual-language representations to guide local organization across samples.</figcaption></figure>
@@ -121,7 +121,7 @@
   </section>
 
 </main>
-<footer class="container site-footer"><a class="wordmark" href="#">P2A-VLA <span class="footer-arrow">↗</span></a><nav class="footer-resources" aria-label="Research resources"><a class="nav-code" href="https://github.com/55Dupup/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a></nav><p class="credits">Layout inspiration: <a href="https://yangsizhe.github.io/MemoryWAM/" target="_blank" rel="noopener">MemoryWAM</a> & <a href="https://semantic-action-rl.github.io/" target="_blank" rel="noopener">SARL</a>.</p></footer>
+<footer class="container site-footer"><a class="wordmark" href="#">P2A-VLA <span class="footer-arrow">↗</span></a><nav class="footer-resources" aria-label="Research resources"><a class="nav-code" href="https://github.com/P2A-VLA/P2A-VLA" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a></nav><p class="credits">Layout inspiration: <a href="https://yangsizhe.github.io/MemoryWAM/" target="_blank" rel="noopener">MemoryWAM</a> & <a href="https://semantic-action-rl.github.io/" target="_blank" rel="noopener">SARL</a>.</p></footer>
 <dialog id="figure-dialog" aria-labelledby="figure-caption"><button class="dialog-close" type="button" aria-label="Close enlarged figure">×</button><img id="figure-image" src="assets/images/architecture.webp" alt=""><p id="figure-caption"></p></dialog>
 <dialog id="video-dialog" aria-labelledby="video-dialog-title"><button class="dialog-close" type="button" aria-label="Close expanded video">×</button><p id="video-dialog-benchmark"></p><h3 id="video-dialog-title"></h3><video id="expanded-video" controls muted loop playsinline preload="none"></video></dialog>
 </body>
